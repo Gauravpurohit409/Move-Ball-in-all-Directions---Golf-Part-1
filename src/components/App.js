@@ -26,24 +26,24 @@ const App = () => {
     useEffect(()=> {
         document.addEventListener("keydown",(event)=>{
             switch(event.keyCode){
-                case 37 :
-                    hello(-5,0);
-                    console.log(ballPosition);
-                break;
-                case 38 :
-                    hello(0,-5);
-                    console.log(ballPosition);
+                // case 37 :
+                //     hello(-5,0);
+                //     console.log(ballPosition);
+                // break;
+                // case 38 :
+                //     hello(0,-5);
+                //     console.log(ballPosition);
 
-                break;
+                // break;
                 case 39 :
                     hello(5,0);
                     console.log(ballPosition);
 
                 break;
-                case 40 :
-                    hello(0,5);
-                    console.log(ballPosition);
-                break;
+                // case 40 :
+                //     hello(0,5);
+                //     console.log(ballPosition);
+                // break;
             }
         });
 

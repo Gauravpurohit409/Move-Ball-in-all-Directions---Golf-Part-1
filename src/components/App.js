@@ -10,14 +10,14 @@ const App = () => {
     const [ballPosition,setBallPosition] = useState({left:5,top:0});
     
     function hello(l,t){
-       console.log(posi,ballPosition.left);
+    //    console.log(posi,ballPosition.left);
        setBallPosition((state) => {
-            console.log("here i am",ballPosition.left,state.left);
+            // console.log("here i am",ballPosition.left,state.left);
             ballPosition.left =state.left +l;
             ballPosition.top = state.top +t;
             return ballPosition;
         })
-        console.log(posi,ballPosition.left,ballPosition.top);
+        // console.log(posi,ballPosition.left,ballPosition.top);
         setPosi({
             pos : posi+1,
         })
@@ -25,7 +25,7 @@ const App = () => {
     // bind ArrowRight keydown event
     useEffect(()=> {
         document.addEventListener("keydown",(event)=>{
-            switch(event.keyCode){
+            switch(event.key){
                 // case 37 :
                 //     hello(-5,0);
                 //     console.log(ballPosition);
@@ -35,9 +35,9 @@ const App = () => {
                 //     console.log(ballPosition);
 
                 // break;
-                case 39 :
+                case "ArrowRight" :
                     hello(5,0);
-                    console.log(ballPosition);
+                    // console.log(ballPosition);
 
                 break;
                 // case 40 :

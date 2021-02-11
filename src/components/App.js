@@ -9,15 +9,14 @@ const App = () => {
     const [posi,setPosi] = useState(0);
     const [ballPosition,setBallPosition] = useState({left:5,top:0});
     
-    function hello(l,t){
-    //    console.log(posi,ballPosition.left);
-       setBallPosition((state) => {
+    function move(l,t){
+           setBallPosition((prevstate) => {
             // console.log("here i am",ballPosition.left,state.left);
-            ballPosition.left =state.left +l;
-            ballPosition.top = state.top +t;
+            ballPosition.left =prevstate.left +l;
+            ballPosition.top = prevstate.top +t;
             return ballPosition;
-        })
-        // console.log(posi,ballPosition.left,ballPosition.top);
+        });
+        //    console.log(posi,ballPosition.left,ballPosition.top);
         setPosi({
             pos : posi+1,
         })
@@ -25,35 +24,29 @@ const App = () => {
     // bind ArrowRight keydown event
     useEffect(()=> {
         document.addEventListener("keydown",(event)=>{
-            switch(event.key){
-                // case 37 :
-                //     hello(-5,0);
-                //     console.log(ballPosition);
-                // break;
-                // case 38 :
-                //     hello(0,-5);
-                //     console.log(ballPosition);
-
-                // break;
-                case "ArrowRight" :
-                    hello(5,0);
+            switch(event.keyCode){
+                case 37 :
+                    move(-5,0);
+                    //  console.log(ballPosition);
+                break;
+                case 38 :
+                    move(0,-5);
                     // console.log(ballPosition);
 
                 break;
-                // case 40 :
-                //     hello(0,5);
+                case 39 :
+                    move(5,0);
+                    // console.log(ballPosition);
+
+                break;
+                case 40 :
+                    move(0,5);
                 //     console.log(ballPosition);
-                // break;
+                break;
             }
         });
 
     },[ballPosition]);
-
-
-
-
-
-
   
     const buttonClickHandler = () => {
         setRenderBall(true);

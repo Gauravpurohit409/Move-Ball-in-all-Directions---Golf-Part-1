@@ -29,24 +29,24 @@ const App = () => {
     const handleListener =  (event)=>{
         // alert("hello");
         switch(event.keyCode){
-            case 37 :
-                move(-5,0);
-                //  console.log(ballPosition);
-            break;
-            case 38 :
-                move(0,-5);
-                // console.log(ballPosition);
+            // case 37 :
+            //     move(-5,0);
+            //     //  console.log(ballPosition);
+            // break;
+            // case 38 :
+            //     move(0,-5);
+            //     // console.log(ballPosition);
 
-            break;
+            // break;
             case 39 :
                 move(5,0);
                 // console.log(ballPosition);
 
             break;
-            case 40 :
-                move(0,5);
-            //     console.log(ballPosition);
-            break;
+            // case 40 :
+            //     move(0,5);
+            // //     console.log(ballPosition);
+            // break;
         }
     };
     // bind ArrowRight keydown event
